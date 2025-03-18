@@ -54,7 +54,7 @@ function projects() {
     <div className="grid grid-cols-3 gap-4 px-20 mb-4">
       {projects &&
         projects.map((pro, index) => (
-          <HoverCard className='rounded-xl'>
+          <HoverCard className='rounded-xl w-64'>
             <HoverCardTrigger>
               <Card key={index}>
                 <div className="w-full">
