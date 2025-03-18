@@ -1,6 +1,12 @@
 "use client";
 import React from "react";
 import Link from "next/link";
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "@/components/hover-card/card"
+
 
 function skills() {
   // const [isVisible, setIsVisible] = React.useState(false)
@@ -67,8 +73,8 @@ function skills() {
             Language
           </li>
           <li
-          // href="#devOps" 
-          className="text-green-800">
+            // href="#devOps" 
+            className="text-green-800">
             devOps
           </li>
         </ul>
@@ -78,95 +84,207 @@ function skills() {
         className={`flex gap-5 ${visibility.frontend ? "" : "hidden"}`}
         id="frontend"
       >
-        <div className="flex justify-center items-center w-20 h-20 rounded-full bg-gray-200">
-          <img src="/images/skill/html-5.png" alt="" className="w-16 h-16 " />
-        </div>
-        <div className="flex justify-center items-center w-20 h-20 rounded-full bg-gray-200">
-          <img src="/images/skill/css.png" alt="" className="w-16 h-16" />
-        </div>
-        <div className="flex justify-center items-center w-20 h-20 rounded-full bg-gray-200">
-          <img
-            src="/images/skill/tailwind-css.png"
-            alt=""
-            className="w-16 h-16 rounded-full"
-          />
-        </div>
-        <div className="flex justify-center items-center w-20 h-20 rounded-full bg-gray-200">
-          <img
-            src="/images/skill/react.png"
-            alt=""
-            className="w-18 h-18 rounded-full"
-          />
-        </div>
-        <div className="flex justify-center items-center w-20 h-20 rounded-full bg-gray-200">
-          <img src="/images/skill/redux.png" alt="" className="w-14 h-14 " />
-        </div>
-        <div className="flex justify-center items-center w-20 h-20 rounded-full bg-gray-200">
-          <img
-            src="/images/skill/nextjs.png"
-            alt=""
-            className="w-18 h-18 rounded-full"
-          />
-        </div>
+        <HoverCard>
+          <HoverCardTrigger>
+            <div className="flex justify-center items-center w-20 h-20 rounded-full bg-gray-200">
+              <img src="/images/skill/html-5.png" alt="" className="w-16 h-16 " />
+            </div>
+          </HoverCardTrigger>
+          <HoverCardContent>
+            <span className="text-sm font-bold">HTML</span>
+          </HoverCardContent>
+        </HoverCard>
+
+        <HoverCard>
+          <HoverCardTrigger>
+            <div className="flex justify-center items-center w-20 h-20 rounded-full bg-gray-200">
+              <img src="/images/skill/css.png" alt="" className="w-16 h-16" />
+            </div>
+          </HoverCardTrigger>
+          <HoverCardContent>
+            <span className="text-sm font-bold">CSS</span>
+          </HoverCardContent>
+        </HoverCard>
+
+
+        <HoverCard>
+          <HoverCardTrigger>
+            <div className="flex justify-center items-center w-20 h-20 rounded-full bg-gray-200">
+              <img
+                src="/images/skill/tailwind-css.png"
+                alt=""
+                className="w-16 h-16 rounded-full"
+              />
+            </div>
+          </HoverCardTrigger>
+          <HoverCardContent>
+            <span className="text-sm font-bold">Tailwind</span>
+          </HoverCardContent>
+        </HoverCard>
+
+
+        <HoverCard>
+          <HoverCardTrigger>
+            <div className="flex justify-center items-center w-20 h-20 rounded-full bg-gray-200">
+              <img
+                src="/images/skill/react.png"
+                alt=""
+                className="w-18 h-18 rounded-full"
+              />
+            </div>
+          </HoverCardTrigger>
+          <HoverCardContent>
+            <span className="text-sm font-bold">REACTJS</span>
+          </HoverCardContent>
+        </HoverCard>
+
+
+        <HoverCard>
+          <HoverCardTrigger>
+            <div className="flex justify-center items-center w-20 h-20 rounded-full bg-gray-200">
+              <img src="/images/skill/redux.png" alt="" className="w-14 h-14 " />
+            </div>
+          </HoverCardTrigger>
+          <HoverCardContent>
+            <span className="text-sm font-bold">REDUX</span>
+          </HoverCardContent>
+        </HoverCard>
+
+
+        <HoverCard>
+          <HoverCardTrigger>
+            <div className="flex justify-center items-center w-20 h-20 rounded-full bg-gray-200">
+              <img
+                src="/images/skill/nextjs.png"
+                alt=""
+                className="w-18 h-18 rounded-full"
+              />
+            </div>
+          </HoverCardTrigger>
+          <HoverCardContent>
+            <span className="text-sm font-bold">NextJS</span>
+          </HoverCardContent>
+        </HoverCard>
+
       </div>
 
       <div
         className={`flex gap-5 ${visibility.backend ? "" : "hidden"}`}
         id="backend"
       >
-        <div className="flex justify-center items-center w-20 h-20 rounded-full bg-gray-200">
-          <img src="/images/skill/nodejs.png" alt="" className="w-16 h-16 " />
-        </div>
-        <div className="flex justify-center items-center w-20 h-20 rounded-full bg-gray-200">
-          <img
-            src="/images/skill/express-js.png"
-            alt=""
-            className="w-16 h-16"
-          />
-        </div>
+        <HoverCard>
+          <HoverCardTrigger>
+            <div className="flex justify-center items-center w-20 h-20 rounded-full bg-gray-200">
+              <img src="/images/skill/nodejs.png" alt="" className="w-16 h-16 " />
+            </div>
+          </HoverCardTrigger>
+          <HoverCardContent>
+            <span className="text-sm font-bold">NodeJS</span>
+          </HoverCardContent>
+        </HoverCard>
+
+
+        <HoverCard>
+          <HoverCardTrigger>
+            <div className="flex justify-center items-center w-20 h-20 rounded-full bg-gray-200">
+              <img
+                src="/images/skill/express-js.png"
+                alt=""
+                className="w-16 h-16"
+              />
+            </div>
+          </HoverCardTrigger>
+          <HoverCardContent>
+            <span className="text-sm font-bold">EXPRESSJS</span>
+          </HoverCardContent>
+        </HoverCard>
+
       </div>
 
       <div
         className={`flex gap-5 ${visibility.langVisibility ? "" : "hidden"}`}
         id="language"
       >
-        <div className="flex justify-center items-center w-20 h-20 rounded-full bg-gray-200">
-          <img
-            src="/images/skill/c++.png"
-            alt=""
-            className="w-16 h-16 rounded-full"
-          />
-        </div>
-        <div className="flex justify-center items-center w-20 h-20 rounded-full bg-gray-200">
-          <img
-            src="/images/skill/javascript.png"
-            alt=""
-            className="w-16 h-16 rounded-full"
-          />
-        </div>
-        <div className="flex justify-center items-center w-20 h-20 rounded-full bg-gray-200">
-          <img
-            src="/images/skill/typescript.png"
-            alt=""
-            className="w-16 h-16 rounded-full"
-          />
-        </div>
+        <HoverCard>
+          <HoverCardTrigger>
+            <div className="flex justify-center items-center w-20 h-20 rounded-full bg-gray-200">
+              <img
+                src="/images/skill/c++.png"
+                alt=""
+                className="w-16 h-16 rounded-full"
+              />
+            </div>
+          </HoverCardTrigger>
+          <HoverCardContent>
+            <span className="text-sm font-bold">C++</span>
+          </HoverCardContent>
+        </HoverCard>
+
+
+        <HoverCard>
+          <HoverCardTrigger>
+            <div className="flex justify-center items-center w-20 h-20 rounded-full bg-gray-200">
+              <img
+                src="/images/skill/javascript.png"
+                alt=""
+                className="w-16 h-16 rounded-full"
+              />
+            </div>
+          </HoverCardTrigger>
+          <HoverCardContent>
+            <span className="text-sm font-bold">JAVASCRIPT</span>
+          </HoverCardContent>
+        </HoverCard>
+
+
+        <HoverCard>
+          <HoverCardTrigger>
+            <div className="flex justify-center items-center w-20 h-20 rounded-full bg-gray-200">
+              <img
+                src="/images/skill/typescript.png"
+                alt=""
+                className="w-16 h-16 rounded-full"
+              />
+            </div>
+          </HoverCardTrigger>
+          <HoverCardContent>
+            <span className="text-sm font-bold">TYPESCRIPT</span>
+          </HoverCardContent>
+        </HoverCard>
+
       </div>
 
       <div
         className={`flex gap-5 ${visibility.dbVisibility ? "" : "hidden"}`}
         id="database"
       >
-        <div className="flex justify-center items-center w-20 h-20 rounded-full bg-gray-200">
-          <img
-            src="/images/skill/mysql.png"
-            alt=""
-            className="w-16 h-16 rounded-full"
-          />
-        </div>
-        <div className="flex justify-center items-center w-20 h-20 rounded-full bg-gray-200">
-          <img src="/images/skill/mongodb.png" alt="" className="w-12 h-12" />
-        </div>
+        <HoverCard>
+          <HoverCardTrigger>
+            <div className="flex justify-center items-center w-20 h-20 rounded-full bg-gray-200">
+              <img
+                src="/images/skill/mysql.png"
+                alt=""
+                className="w-16 h-16 rounded-full"
+              />
+            </div>
+          </HoverCardTrigger>
+          <HoverCardContent>
+            <span className="text-sm font-bold">MYSQL</span>
+          </HoverCardContent>
+        </HoverCard>
+
+
+        <HoverCard>
+          <HoverCardTrigger>
+            <div className="flex justify-center items-center w-20 h-20 rounded-full bg-gray-200">
+              <img src="/images/skill/mongodb.png" alt="" className="w-12 h-12" />
+            </div>
+          </HoverCardTrigger>
+          <HoverCardContent>
+            <span className="text-sm font-bold">MONGODB</span>
+          </HoverCardContent>
+        </HoverCard>
+
       </div>
     </div>
   );
