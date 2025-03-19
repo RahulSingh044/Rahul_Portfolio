@@ -26,7 +26,7 @@ export default function page() {
   }
 
   return (
-    <div className="w-full">
+    <div className="w-full mt-10">
       {testimonial &&
         testimonial.length > 0 &&
         testimonial.map((test, index) => (
