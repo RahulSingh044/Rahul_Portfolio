@@ -32,7 +32,7 @@ function skills() {
   };
 
   return (
-    <div className="w-full flex gap-8">
+    <div className="w-full flex gap-8 mt-10">
       {/* Side Navbar */}
       <div className-="w-full">
         <ul className="flex w-10 gap-4 rotate-90 font-medium text-gray-400 tracking-wide cursor-pointer">
