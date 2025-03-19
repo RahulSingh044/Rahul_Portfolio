@@ -21,8 +21,8 @@ export default function page() {
     data();
   }, []);
 
-  if (testimonial < 0) {
-    return <div>Nothing to show</div>
+  if (testimonial <= 0) {
+    return <div className="text-center text-2xl">No Testimonials yet</div>
   }
 
   return (
