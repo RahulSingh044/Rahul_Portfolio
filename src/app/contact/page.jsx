@@ -5,7 +5,7 @@ import { SendHorizontal } from "lucide-react";
 
 function contact() {
   return (
-    <div className="w-full px-36">
+    <div className="w-full px-36 mt-10">
       <form className="flex flex-col gap-6 w-1/2" action="">
         <div className="flex gap-4 w-full">
           <input
@@ -27,7 +27,7 @@ function contact() {
         <textarea
           placeholder="Message"
           rows="6"
-          className="message-input outline-none px-3 py-2 border border-gray-400 rounded-md"
+          className="message-input outline-none px-3 py-2 border border-gray-400 rounded-md resize-none"
         />
         <div className="w-full flex justify-end">
           <button
