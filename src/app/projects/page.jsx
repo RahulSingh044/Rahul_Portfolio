@@ -20,14 +20,16 @@ import axios from "axios";
 
 function projects() {
   const [projects, setProjects] = React.useState([]);
+  const [loading, setLoading] = React.useState(false);
 
   const proj = async () => {
     try {
+      setLoading(true);
       const res = await axios.get(
         `${process.env.NEXT_PUBLIC_STRAPI_URL}/projects?populate=*`
       );
-      console.log(res.data.data);
       setProjects(res.data.data);
+      setLoading(false);
     } catch (error) {
       console.log(error.message);
     }
@@ -46,12 +48,17 @@ function projects() {
     proj();
   }, []);
 
-  if (projects.length === 0) {
-    return <div className="text-center text-2xl font-bold">No projects found</div>;
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center h-96">
+        <p className="text-2xl font-bold">Loading...</p>
+      </div>
+    )
   }
 
+
   return (
-    <div className="grid grid-cols-3 gap-4 px-20 mb-4">
+    <div className="grid grid-cols-3 gap-4 px-20 mb-4 mt-10">
       {projects &&
         projects.map((pro, index) => (
           <HoverCard className='rounded-xl w-64'>
@@ -91,7 +98,7 @@ function projects() {
           </HoverCard>
         ))}
     </div>
-  );
+  )
 }
 
 export default projects;
