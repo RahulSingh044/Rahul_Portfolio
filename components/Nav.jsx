@@ -50,7 +50,7 @@ function Nav() {
   }, []);
 
   return (
-    <div className="min-w-screen h-96">
+    <div className="min-w-screen h-80">
       <div className="w-full flex gap-20 px-36 pt-10">
         {/* Profile Picture */}
         <div>
@@ -67,11 +67,7 @@ function Nav() {
           <h1 className="text-4xl font-bold tracking-wider">
             Rahul Singh Chouhan
           </h1>
-          <h1 className="text-gray-400 text-xl tracking-wide">
-            {" "}
-            Tech Versatile{" "}
-          </h1>
-          <p className="">Full Stack Engineer ( Web App ) |</p>
+          <p className="text-gray-400 text-lg">MERN Stack Developer | Full-Stack Web Development | React | Node.js | MongoDB</p>
           <div className="w-full flex justify-between mt-6">
             {/* Social Media Links */}
             <div className="flex gap-3">
