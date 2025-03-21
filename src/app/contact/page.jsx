@@ -4,8 +4,11 @@ import { SendHorizontal } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast"
 import axios from "axios";
+import { useDispatch } from "react-redux";
+import { setCursorVariants } from "../../store/cursorSlice";
 
 function contact() {
+  const dispatch = useDispatch();
   const { register, handleSubmit, formState: { errors } } = useForm();
 
   const onSubmit = async (value) => {
@@ -30,27 +33,45 @@ function contact() {
     }
   }
 
+  const textEnter = () => {
+    dispatch(setCursorVariants('text'));
+  }
+
+  const BtnClick = () => {
+    dispatch(setCursorVariants('BtnClick'));
+  }
+
+  const textLeave = () => {
+    dispatch(setCursorVariants('default'));
+  }
+
   return (
     <div className="w-full px-36 mt-10">
       <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-6 w-1/2">
         <div className="flex gap-4 w-full">
           <input
+            onMouseEnter={BtnClick}
+            onMouseLeave={textLeave}
             type="text"
             placeholder="Full Name"
             {...register("name", { required: true })}
-            className="w-full outline-none px-3 py-2 border border-gray-400 rounded-md"
+            className="w-full outline-none px-3 py-2 border border-gray-400 rounded-md hover:border-green-800 hover:border-2 transition-all duration-200"
           />
           <div>
           <input
+            onMouseEnter={BtnClick}
+            onMouseLeave={textLeave}
             type="text"
             placeholder="Phone no."
             {...register("phone", { required: true, pattern: { value: /^\d{10}$/, message: "Invalid phone number" } })}
-            className="outline-none px-3 py-2 border border-gray-400 rounded-md"
+            className="outline-none px-3 py-2 border border-gray-400 rounded-md hover:border-green-800 hover:border-2 transition-all duration-200"
           />
           {errors.phone && <p className="text-red-500 text-sm">{errors.phone.message}</p>}
           </div>
         </div>
         <input
+          onMouseEnter={BtnClick}
+          onMouseLeave={textLeave}
           type="email"
           placeholder="Email"
           {...register("email", {
@@ -59,20 +80,24 @@ function contact() {
               message: "Invalid email address"
             }
           })}
-          className="outline-none px-3 py-2 border border-gray-400 rounded-md"
+          className="outline-none px-3 py-2 border border-gray-400 rounded-md hover:border-green-800 hover:border-2 transition-all duration-200"
         />
         {errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
         
         <textarea
+          onMouseEnter={BtnClick}
+          onMouseLeave={textLeave}
           placeholder="Message"
           rows="6"
           {...register("message", { required: true })}
-          className="message-input outline-none px-3 py-2 border border-gray-400 rounded-md resize-none"
+          className="message-input outline-none px-3 py-2 border border-gray-400 rounded-md resize-none hover:border-green-800 hover:border-2 transition-all duration-200"
         />
         <div className="w-full flex justify-end">
-          <button
+          <button 
+            onMouseEnter={BtnClick}
+            onMouseLeave={textLeave}
             type="submit"
-            className="border-2 border-green-800 rounded-full py-1.5 justify-center text-green-800 flex gap-2 w-3/12 font-semibold"
+            className="border-2 cursor-none border-green-800 rounded-full py-1.5 justify-center text-green-800 flex gap-2 w-3/12 font-semibold hover:gap-4 hover:bg-green-800 hover:text-white transition-all duration-200 "
           >
             Submit
             <SendHorizontal />

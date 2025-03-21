@@ -6,6 +6,8 @@ import { Instagram } from "lucide-react";
 import { SquareArrowOutUpRight, Plus } from "lucide-react";
 import Link from "next/link";
 import TestimonialForm from "./TestimonialForm";
+import { useDispatch } from "react-redux";
+import { setCursorVariants } from "../src/store/cursorSlice";
 import {
   Dialog,
   DialogContent,
@@ -17,6 +19,7 @@ import {
 } from "@/components/ui/dialog";
 
 function Nav() {
+  const dispatch = useDispatch();
   const [isVisible, setIsVisible] = React.useState({
     about: true,
     projects: false,
@@ -42,6 +45,22 @@ function Nav() {
     });
   };
 
+  const textEnter = () => {
+    dispatch(setCursorVariants('text'));
+  }
+
+  const BtnClick = () => {
+    dispatch(setCursorVariants('BtnClick'));
+  }
+
+  const textLeave = () => {
+    dispatch(setCursorVariants('default'));
+  }
+
+  const ImgHover = () => {
+    dispatch(setCursorVariants('ImgHover'));
+  }
+
   React.useEffect(() => {
     const currentUrl = window.location.href;
     const Base = "http://localhost:3000/";
@@ -54,58 +73,60 @@ function Nav() {
       <div className="w-full flex gap-20 px-36 pt-10">
         {/* Profile Picture */}
         <div>
-          <div className="w-44 h-44 rounded-full border-2 border-black flex justify-center items-center">
+          <div onMouseEnter={ImgHover}
+              onMouseLeave={textLeave} className="w-44 h-44 rounded-full border-2 border-black flex justify-center items-center">
             <img
+              
               src="/images/pfp.jpg"
               alt="Rahul Singh"
-              className="w-40 h-40 rounded-full object-fill hover:scale-105"
+              className="w-40 h-40 rounded-full object-fill hover:scale-105 cursor-none"
             />
           </div>
         </div>
         {/* Bio */}
         <div className="w-4/5 py-8 flex flex-col gap-3">
-          <h1 className="text-4xl font-bold tracking-wider">
+          <h1 onMouseEnter={textEnter} onMouseLeave={textLeave} className="text-4xl font-bold tracking-wider">
             Rahul Singh Chouhan
           </h1>
-          <p className="text-gray-400 text-lg">MERN Stack Developer | Full-Stack Web Development | React | Node.js | MongoDB</p>
+          <p onMouseEnter={textEnter} onMouseLeave={textLeave} className="text-gray-400 text-lg">MERN Stack Developer | Full-Stack Web Development | React | Node.js | MongoDB</p>
           <div className="w-full flex justify-between mt-6">
             {/* Social Media Links */}
             <div className="flex gap-3">
-              <div className="w-10 h-10 flex justify-center items-center rounded-full border-2">
+              <div onMouseEnter={BtnClick} onMouseLeave={textLeave} className="w-10 h-10 flex justify-center items-center rounded-full border-2 hover:bg-green-800 hover:text-white transition-all duration-200">
                 <Link href="https://www.linkedin.com/in/rahul-singh-chouhan-381b252a9/">
-                  <Linkedin className="text-gray-500 hover:text-green-800" />
+                  <Linkedin className="text-gray-500 hover:text-white" />
                 </Link>
               </div>
 
-              <div className="w-10 h-10 flex justify-center items-center rounded-full border-2">
+              <div onMouseEnter={BtnClick} onMouseLeave={textLeave} className="w-10 h-10 flex justify-center items-center rounded-full border-2 hover:bg-green-800 hover:text-white transition-all duration-200">
                 <Link href="https://github.com/RahulSingh044">
-                  <Github className="text-gray-500 hover:text-green-800" />
+                  <Github className="text-gray-500 hover:text-white" />
                 </Link>
               </div>
 
-              <div className="w-10 h-10 flex justify-center items-center rounded-full border-2">
-                <Instagram className="text-gray-500 hover:text-green-800" />
+              <div onMouseEnter={BtnClick} onMouseLeave={textLeave} className="w-10 h-10 flex justify-center items-center rounded-full border-2 hover:bg-green-800 hover:text-white transition-all duration-300">
+                <Instagram className="text-gray-500 hover:text-white" />
               </div>
             </div>
 
             {isVisible.testimonials ? (
               /* Add testimonials */
-                <Dialog className="w-80">
-                  <DialogTrigger className="w-48 h-8 border border-green-800 rounded-full flex justify-center items-center text-sm tracking-wider px-4 gap-2 text-green-800">
-                    Add Testimonials
-                    <Plus width="14" />
-                  </DialogTrigger>
-                  <DialogContent>
+              <Dialog className="w-80">
+                <DialogTrigger onMouseEnter={BtnClick} onMouseLeave={textLeave} className="w-48 h-8 cursor-none border border-green-800 rounded-full flex justify-center items-center text-sm tracking-wider px-4 gap-2 text-green-800 hover:bg-green-800 hover:text-white transition-all duration-300">
+                  Add Testimonials
+                  <Plus width="14" />
+                </DialogTrigger>
+                <DialogContent>
                   <DialogHeader >
                     <DialogTitle className="font-mono text-2xl">Add your <span className="text-green-800">Testimonials</span></DialogTitle>
                   </DialogHeader>
-                    <TestimonialForm />
-                  </DialogContent>
-                </Dialog>
+                  <TestimonialForm />
+                </DialogContent>
+              </Dialog>
             ) : (
               /* Message Box */
               <Link href="/contact">
-                <div className="w-40 h-8 border border-green-800 rounded-full flex justify-center items-center text-sm tracking-wider px-4 gap-2 text-green-800">
+                <div onMouseEnter={BtnClick} onMouseLeave={textLeave} className="w-40 h-8 border border-green-800 rounded-full flex justify-center items-center text-sm tracking-wider px-4 gap-2 text-green-800 hover:bg-green-800 hover:text-white transition-all duration-300">
                   Message me
                   <SquareArrowOutUpRight width="14" />
                 </div>
@@ -124,6 +145,8 @@ function Nav() {
                 toggleVisibility("about");
               }}
               href="/"
+              onMouseEnter={BtnClick}
+              onMouseLeave={textLeave}
               className={isVisible.about ? "text-green-800" : ""}
             >
               About
@@ -132,12 +155,16 @@ function Nav() {
               onClick={() => toggleVisibility("projects")}
               href="/projects"
               className={isVisible.projects ? "text-green-800" : ""}
+              onMouseEnter={BtnClick}
+              onMouseLeave={textLeave}
             >
               Projects
             </Link>
             <Link
               onClick={() => toggleVisibility("skills")}
               href="/skills"
+              onMouseEnter={BtnClick}
+              onMouseLeave={textLeave}
               className={isVisible.skills ? "text-green-800" : ""}
             >
               Skills
@@ -145,6 +172,8 @@ function Nav() {
             <Link
               onClick={() => toggleVisibility("testimonials")}
               href="/testimonials"
+              onMouseEnter={BtnClick}
+              onMouseLeave={textLeave}
               className={isVisible.testimonials ? "text-green-800" : ""}
             >
               Testimonials
@@ -152,6 +181,8 @@ function Nav() {
             <Link
               onClick={() => toggleVisibility("contact")}
               href="/contact"
+              onMouseEnter={BtnClick}
+              onMouseLeave={textLeave}
               className={isVisible.contact ? "text-green-800" : ""}
             >
               Contact

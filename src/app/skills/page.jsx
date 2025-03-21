@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
-import Link from "next/link";
+import { useDispatch } from "react-redux";
+import { setCursorVariants } from "../../store/cursorSlice";
 import {
   HoverCard,
   HoverCardContent,
@@ -9,7 +10,7 @@ import {
 
 
 function skills() {
-  // const [isVisible, setIsVisible] = React.useState(false)
+  const dispatch = useDispatch();
   const [visibility, setVisibility] = React.useState({
     frontend: true,
     backend: false,
@@ -31,6 +32,18 @@ function skills() {
     });
   };
 
+  const textEnter = () => {
+    dispatch(setCursorVariants('text'));
+  }
+ 
+  const BtnClick = () => {
+    dispatch(setCursorVariants('BtnClick'));
+  }
+
+  const textLeave = () => {
+    dispatch(setCursorVariants('default'));
+  }
+
   return (
     <div className="w-full flex gap-8 mt-10">
       {/* Side Navbar */}
@@ -41,6 +54,8 @@ function skills() {
               toggleVisibility("frontend");
             }}
             // href="#frontend"
+            onMouseEnter={BtnClick}
+            onMouseLeave={textLeave}
             className={visibility.frontend ? "text-green-800" : ""}
           >
             Frontend
@@ -49,7 +64,8 @@ function skills() {
             onClick={() => {
               toggleVisibility("backend");
             }}
-            // href="#backend"
+            onMouseEnter={BtnClick}
+            onMouseLeave={textLeave}
             className={visibility.backend ? "text-green-800" : ""}
           >
             Backend
@@ -58,7 +74,8 @@ function skills() {
             onClick={() => {
               toggleVisibility("dbVisibility");
             }}
-            // href="#database"
+            onMouseEnter={BtnClick}
+            onMouseLeave={textLeave}
             className={visibility.dbVisibility ? "text-green-800" : ""}
           >
             Database
@@ -67,16 +84,17 @@ function skills() {
             onClick={() => {
               toggleVisibility("langVisibility");
             }}
-            // href="#language"
+            onMouseEnter={BtnClick}
+            onMouseLeave={textLeave}
             className={visibility.langVisibility ? "text-green-800" : ""}
           >
             Language
           </li>
-          <li
+          {/* <li
             // href="#devOps" 
             className="text-green-800">
             devOps
-          </li>
+          </li> */}
         </ul>
       </div>
 
@@ -86,7 +104,7 @@ function skills() {
       >
         <HoverCard>
           <HoverCardTrigger>
-            <div className="flex justify-center items-center w-20 h-20 rounded-full bg-gray-200">
+            <div onMouseEnter={BtnClick} onMouseLeave={textLeave} className="flex justify-center items-center w-20 h-20 rounded-full bg-gray-200">
               <img src="/images/skill/html-5.png" alt="" className="w-16 h-16 " />
             </div>
           </HoverCardTrigger>
@@ -97,7 +115,7 @@ function skills() {
 
         <HoverCard>
           <HoverCardTrigger>
-            <div className="flex justify-center items-center w-20 h-20 rounded-full bg-gray-200">
+          <div onMouseEnter={BtnClick} onMouseLeave={textLeave} className="flex justify-center items-center w-20 h-20 rounded-full bg-gray-200">
               <img src="/images/skill/css.png" alt="" className="w-16 h-16" />
             </div>
           </HoverCardTrigger>
@@ -109,7 +127,7 @@ function skills() {
 
         <HoverCard>
           <HoverCardTrigger>
-            <div className="flex justify-center items-center w-20 h-20 rounded-full bg-gray-200">
+          <div onMouseEnter={BtnClick} onMouseLeave={textLeave} className="flex justify-center items-center w-20 h-20 rounded-full bg-gray-200">
               <img
                 src="/images/skill/tailwind-css.png"
                 alt=""
@@ -125,7 +143,7 @@ function skills() {
 
         <HoverCard>
           <HoverCardTrigger>
-            <div className="flex justify-center items-center w-20 h-20 rounded-full bg-gray-200">
+          <div onMouseEnter={BtnClick} onMouseLeave={textLeave} className="flex justify-center items-center w-20 h-20 rounded-full bg-gray-200">
               <img
                 src="/images/skill/react.png"
                 alt=""
@@ -141,7 +159,7 @@ function skills() {
 
         <HoverCard>
           <HoverCardTrigger>
-            <div className="flex justify-center items-center w-20 h-20 rounded-full bg-gray-200">
+          <div onMouseEnter={BtnClick} onMouseLeave={textLeave} className="flex justify-center items-center w-20 h-20 rounded-full bg-gray-200">
               <img src="/images/skill/redux.png" alt="" className="w-14 h-14 " />
             </div>
           </HoverCardTrigger>
@@ -153,7 +171,7 @@ function skills() {
 
         <HoverCard>
           <HoverCardTrigger>
-            <div className="flex justify-center items-center w-20 h-20 rounded-full bg-gray-200">
+          <div onMouseEnter={BtnClick} onMouseLeave={textLeave} className="flex justify-center items-center w-20 h-20 rounded-full bg-gray-200">
               <img
                 src="/images/skill/nextjs.png"
                 alt=""
@@ -174,7 +192,7 @@ function skills() {
       >
         <HoverCard>
           <HoverCardTrigger>
-            <div className="flex justify-center items-center w-20 h-20 rounded-full bg-gray-200">
+          <div onMouseEnter={BtnClick} onMouseLeave={textLeave} className="flex justify-center items-center w-20 h-20 rounded-full bg-gray-200">
               <img src="/images/skill/nodejs.png" alt="" className="w-16 h-16 " />
             </div>
           </HoverCardTrigger>
@@ -186,7 +204,7 @@ function skills() {
 
         <HoverCard>
           <HoverCardTrigger>
-            <div className="flex justify-center items-center w-20 h-20 rounded-full bg-gray-200">
+          <div onMouseEnter={BtnClick} onMouseLeave={textLeave} className="flex justify-center items-center w-20 h-20 rounded-full bg-gray-200">
               <img
                 src="/images/skill/express-js.png"
                 alt=""
@@ -207,7 +225,7 @@ function skills() {
       >
         <HoverCard>
           <HoverCardTrigger>
-            <div className="flex justify-center items-center w-20 h-20 rounded-full bg-gray-200">
+          <div onMouseEnter={BtnClick} onMouseLeave={textLeave} className="flex justify-center items-center w-20 h-20 rounded-full bg-gray-200">
               <img
                 src="/images/skill/c++.png"
                 alt=""
@@ -223,7 +241,7 @@ function skills() {
 
         <HoverCard>
           <HoverCardTrigger>
-            <div className="flex justify-center items-center w-20 h-20 rounded-full bg-gray-200">
+          <div onMouseEnter={BtnClick} onMouseLeave={textLeave} className="flex justify-center items-center w-20 h-20 rounded-full bg-gray-200">
               <img
                 src="/images/skill/javascript.png"
                 alt=""
@@ -239,7 +257,7 @@ function skills() {
 
         <HoverCard>
           <HoverCardTrigger>
-            <div className="flex justify-center items-center w-20 h-20 rounded-full bg-gray-200">
+          <div onMouseEnter={BtnClick} onMouseLeave={textLeave} className="flex justify-center items-center w-20 h-20 rounded-full bg-gray-200">
               <img
                 src="/images/skill/typescript.png"
                 alt=""
@@ -260,7 +278,7 @@ function skills() {
       >
         <HoverCard>
           <HoverCardTrigger>
-            <div className="flex justify-center items-center w-20 h-20 rounded-full bg-gray-200">
+          <div onMouseEnter={BtnClick} onMouseLeave={textLeave} className="flex justify-center items-center w-20 h-20 rounded-full bg-gray-200">
               <img
                 src="/images/skill/mysql.png"
                 alt=""
@@ -276,7 +294,7 @@ function skills() {
 
         <HoverCard>
           <HoverCardTrigger>
-            <div className="flex justify-center items-center w-20 h-20 rounded-full bg-gray-200">
+            <div onMouseEnter={BtnClick} onMouseLeave={textLeave} className="flex justify-center items-center w-20 h-20 rounded-full bg-gray-200">
               <img src="/images/skill/mongodb.png" alt="" className="w-12 h-12" />
             </div>
           </HoverCardTrigger>

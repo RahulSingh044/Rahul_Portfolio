@@ -1,8 +1,9 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Nav from "../../components/Nav";
-import { Toaster } from 'react-hot-toast'
-
+import { Toaster } from "react-hot-toast";
+import Cursor from "../../components/Cursor/Cursor";
+import SliceProvider from "./SliceProvider";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -24,11 +25,12 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-w-screen min-h-screen overflow-x-hidden`}
       >
+        <SliceProvider>
         <Nav />
-        {children}
-        <Toaster 
-        position="top-right"
-        />
+          {children}
+          <Cursor />
+        <Toaster position="top-right" />
+        </SliceProvider>
       </body>
     </html>
   );

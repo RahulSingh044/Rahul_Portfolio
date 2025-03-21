@@ -5,34 +5,39 @@ import axios from "axios";
 function TestimonialForm() {
   // const fileInputRef = useRef(null);
   const { register, handleSubmit } = useForm();
-  const [file, setFile] = React.useState(null);
+  const [image, setFile] = React.useState(null);
 
   const onSubmit = async (values) => {
-    const val = {
 
+    const data = new FormData();
+    data.append('files.image', image); // Changed to files.image for Strapi
+
+    // Create data object first
+    const dataObj = {
       Name: values.name,
       Profession: values.profession,
       Email: values.email,
       message: values.message,
-    }
+    };
 
-    const data = new FormData();
-    data.append('data', JSON.stringify(val));
-    if (file) {
-      data.append('files.image', file);
-    }
-
-    // FormData contents aren't visible in console.log
-    // Use this to see the actual data:
-    for (let pair of data.entries()) {
+    // Append data object separately
+    data.append('data', JSON.stringify(dataObj));
+    console.log('FormData contents:');
+    for (let pair of formData.entries()) {
       console.log(pair[0], pair[1]);
     }
 
     try {
-      const res = await axios.post(`${process.env.NEXT_PUBLIC_STRAPI_URL}/testimonials`, data);
-      console.log(res.data); // Log full response data instead of res.message
+      const res = await axios.post(
+        `${process.env.NEXT_PUBLIC_STRAPI_URL}/testimonials`,
+        data
+      );
+
+      const response = await res.json();
+      console.log(response);
+
     } catch (error) {
-      console.log('Error:', error.response?.data || error.message); // Log detailed error
+      console.error(JSON.stringify(error));
     }
   }
 
