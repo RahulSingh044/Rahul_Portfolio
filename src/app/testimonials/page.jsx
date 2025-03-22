@@ -45,36 +45,36 @@ export default function page() {
   }
 
   return (
-    <div className="w-full mt-10">
+    <div className="w-full md:mt-10 mt-16">
       {testimonial &&
         testimonial.length > 0 &&
         testimonial.map((test, index) => (
-          <div className="w-1/2 mx-28 flex flex-col gap-3 p-6 px-10" key={index}>
+          <div className="md:w-1/2 mt-20 md:mt-0 mx-4 md:mx-10 lg:mx-28 flex flex-col gap-3 p-6 md:px-10 shadow-green-200 shadow-md rounded-lg" key={index}>
             {/* Top section */}
-            <div className="flex gap-3">
+            <div className="flex gap-5">
               {/* Profile Image */}
               <div onMouseEnter={ImgHover}
                   onMouseLeave={textLeave}>
                 <img
                   src={`http://localhost:1337//api/testimonials${test.image.url}`}
                   alt="profile"
-                  className="h-20 w-20 bg-gray-500 rounded-full object-cover"
+                  className="md:h-20 md:w-20 h-14 w-14 bg-gray-500 rounded-full object-cover"
                 />
               </div>
               <div className="flex flex-col justify-center" >
-                <h1 onMouseEnter={textEnter} onMouseLeave={textLeave} className="font-semibold text-xl">{test.Name}</h1>
-                <span onMouseEnter={textEnter} onMouseLeave={textLeave} className="text-sm tracking-wider text-slate-400">
+                <h1 onMouseEnter={textEnter} onMouseLeave={textLeave} className="font-semibold md:text-xl text-lg">{test.Name}</h1>
+                <span onMouseEnter={textEnter} onMouseLeave={textLeave} className="md:text-sm text-xs tracking-wider text-slate-400">
                   {test.Profession}
                 </span>
-                <span onMouseEnter={textEnter} onMouseLeave={textLeave} className="text-sm tracking-wider text-slate-400">
+                <span onMouseEnter={textEnter} onMouseLeave={textLeave} className="md:text-sm text-xs tracking-wider text-slate-400">
                   {test.Email}
                 </span>
               </div>
             </div>
 
             <div className="flex rotate-180 justify-end">
-              <img src="images/comma.png" alt="" width="30" />
-              <img src="images/comma.png" alt="" width="30" />
+              <img src="images/comma.png" alt="" className="md:w-10 md:h-10 w-8 h-8" />
+              <img src="images/comma.png" alt="" className="md:w-10 md:h-10 w-8 h-8" />
             </div>
 
             {/* Lower Section */}

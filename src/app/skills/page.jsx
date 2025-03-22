@@ -45,10 +45,10 @@ function skills() {
   }
 
   return (
-    <div className="w-full flex gap-8 mt-10">
+    <div className="w-full flex md:gap-8 gap-2 lg:mt-4 md:mt-8 mt-20">
       {/* Side Navbar */}
       <div className-="w-full">
-        <ul className="flex w-10 gap-4 rotate-90 font-medium text-gray-400 tracking-wide cursor-pointer">
+        <ul className="flex w-10 gap-4 rotate-90 font-medium text-gray-400 md:tracking-wide lg:text-lg text-sm cursor-pointer">
           <li
             onClick={() => {
               toggleVisibility("frontend");
@@ -99,13 +99,13 @@ function skills() {
       </div>
 
       <div
-        className={`flex gap-5 ${visibility.frontend ? "" : "hidden"}`}
+        className={`flex lg:px-16 md:gap-5 flex-wrap gap-3 ${visibility.frontend ? "" : "hidden"}`}
         id="frontend"
       >
         <HoverCard>
           <HoverCardTrigger>
-            <div onMouseEnter={BtnClick} onMouseLeave={textLeave} className="flex justify-center items-center w-20 h-20 rounded-full bg-gray-200">
-              <img src="/images/skill/html-5.png" alt="" className="w-16 h-16 " />
+            <div onMouseEnter={BtnClick} onMouseLeave={textLeave} className="flex justify-center items-center md:w-20 md:h-20 w-14 h-14 rounded-full bg-gray-200">
+              <img src="/images/skill/html-5.png" alt="" className="md:w-16 md:h-16 w-10 h-10 " />
             </div>
           </HoverCardTrigger>
           <HoverCardContent>
@@ -115,8 +115,8 @@ function skills() {
 
         <HoverCard>
           <HoverCardTrigger>
-          <div onMouseEnter={BtnClick} onMouseLeave={textLeave} className="flex justify-center items-center w-20 h-20 rounded-full bg-gray-200">
-              <img src="/images/skill/css.png" alt="" className="w-16 h-16" />
+          <div onMouseEnter={BtnClick} onMouseLeave={textLeave} className="flex justify-center items-center md:w-20 md:h-20 w-14 h-14 rounded-full bg-gray-200">
+              <img src="/images/skill/css.png" alt="" className="md:w-16 md:h-16 w-10 h-10" />
             </div>
           </HoverCardTrigger>
           <HoverCardContent>
@@ -127,11 +127,11 @@ function skills() {
 
         <HoverCard>
           <HoverCardTrigger>
-          <div onMouseEnter={BtnClick} onMouseLeave={textLeave} className="flex justify-center items-center w-20 h-20 rounded-full bg-gray-200">
+          <div onMouseEnter={BtnClick} onMouseLeave={textLeave} className="flex justify-center items-center md:w-20 md:h-20 w-14 h-14 rounded-full bg-gray-200">
               <img
                 src="/images/skill/tailwind-css.png"
                 alt=""
-                className="w-16 h-16 rounded-full"
+                className="md:w-16 md:h-16 w-10 h-10 rounded-full"
               />
             </div>
           </HoverCardTrigger>
@@ -143,11 +143,11 @@ function skills() {
 
         <HoverCard>
           <HoverCardTrigger>
-          <div onMouseEnter={BtnClick} onMouseLeave={textLeave} className="flex justify-center items-center w-20 h-20 rounded-full bg-gray-200">
+          <div onMouseEnter={BtnClick} onMouseLeave={textLeave} className="flex justify-center items-center md:w-20 md:h-20 w-14 h-14 rounded-full bg-gray-200">
               <img
                 src="/images/skill/react.png"
                 alt=""
-                className="w-18 h-18 rounded-full"
+                className="md:w-16 md:h-16 w-10 h-10 rounded-full"
               />
             </div>
           </HoverCardTrigger>
@@ -159,8 +159,8 @@ function skills() {
 
         <HoverCard>
           <HoverCardTrigger>
-          <div onMouseEnter={BtnClick} onMouseLeave={textLeave} className="flex justify-center items-center w-20 h-20 rounded-full bg-gray-200">
-              <img src="/images/skill/redux.png" alt="" className="w-14 h-14 " />
+          <div onMouseEnter={BtnClick} onMouseLeave={textLeave} className="flex justify-center items-center md:w-20 md:h-20 w-14 h-14 rounded-full bg-gray-200">
+              <img src="/images/skill/redux.png" alt="" className="md:w-16 md:h-16 w-10 h-10 " />
             </div>
           </HoverCardTrigger>
           <HoverCardContent>
@@ -171,11 +171,11 @@ function skills() {
 
         <HoverCard>
           <HoverCardTrigger>
-          <div onMouseEnter={BtnClick} onMouseLeave={textLeave} className="flex justify-center items-center w-20 h-20 rounded-full bg-gray-200">
+          <div onMouseEnter={BtnClick} onMouseLeave={textLeave} className="flex justify-center items-center md:w-20 md:h-20 w-14 h-14 rounded-full bg-gray-200">
               <img
                 src="/images/skill/nextjs.png"
                 alt=""
-                className="w-18 h-18 rounded-full"
+                className="md:w-16 md:h-16 w-10 h-10 rounded-full"
               />
             </div>
           </HoverCardTrigger>
@@ -192,8 +192,8 @@ function skills() {
       >
         <HoverCard>
           <HoverCardTrigger>
-          <div onMouseEnter={BtnClick} onMouseLeave={textLeave} className="flex justify-center items-center w-20 h-20 rounded-full bg-gray-200">
-              <img src="/images/skill/nodejs.png" alt="" className="w-16 h-16 " />
+          <div onMouseEnter={BtnClick} onMouseLeave={textLeave} className="flex justify-center items-center md:w-20 md:h-20 w-14 h-14 rounded-full bg-gray-200">
+              <img src="/images/skill/nodejs.png" alt="" className="md:w-16 md:h-16 w-10 h-10 " />
             </div>
           </HoverCardTrigger>
           <HoverCardContent>
@@ -204,11 +204,11 @@ function skills() {
 
         <HoverCard>
           <HoverCardTrigger>
-          <div onMouseEnter={BtnClick} onMouseLeave={textLeave} className="flex justify-center items-center w-20 h-20 rounded-full bg-gray-200">
+          <div onMouseEnter={BtnClick} onMouseLeave={textLeave} className="flex justify-center items-center md:w-20 md:h-20 w-14 h-14 rounded-full bg-gray-200">
               <img
                 src="/images/skill/express-js.png"
                 alt=""
-                className="w-16 h-16"
+                className="md:w-16 md:h-16 w-10 h-10"
               />
             </div>
           </HoverCardTrigger>
@@ -225,11 +225,11 @@ function skills() {
       >
         <HoverCard>
           <HoverCardTrigger>
-          <div onMouseEnter={BtnClick} onMouseLeave={textLeave} className="flex justify-center items-center w-20 h-20 rounded-full bg-gray-200">
+          <div onMouseEnter={BtnClick} onMouseLeave={textLeave} className="flex justify-center items-center md:w-20 md:h-20 w-14 h-14 rounded-full bg-gray-200">
               <img
                 src="/images/skill/c++.png"
                 alt=""
-                className="w-16 h-16 rounded-full"
+                className="md:w-16 md:h-16 w-10 h-10 rounded-full"
               />
             </div>
           </HoverCardTrigger>
@@ -241,11 +241,11 @@ function skills() {
 
         <HoverCard>
           <HoverCardTrigger>
-          <div onMouseEnter={BtnClick} onMouseLeave={textLeave} className="flex justify-center items-center w-20 h-20 rounded-full bg-gray-200">
+          <div onMouseEnter={BtnClick} onMouseLeave={textLeave} className="flex justify-center items-center md:w-20 md:h-20 w-14 h-14 rounded-full bg-gray-200">
               <img
                 src="/images/skill/javascript.png"
                 alt=""
-                className="w-16 h-16 rounded-full"
+                className="md:w-16 md:h-16 w-10 h-10 rounded-full"
               />
             </div>
           </HoverCardTrigger>
@@ -257,11 +257,11 @@ function skills() {
 
         <HoverCard>
           <HoverCardTrigger>
-          <div onMouseEnter={BtnClick} onMouseLeave={textLeave} className="flex justify-center items-center w-20 h-20 rounded-full bg-gray-200">
+          <div onMouseEnter={BtnClick} onMouseLeave={textLeave} className="flex justify-center items-center md:w-20 md:h-20 w-14 h-14 rounded-full bg-gray-200">
               <img
                 src="/images/skill/typescript.png"
                 alt=""
-                className="w-16 h-16 rounded-full"
+                className="md:w-16 md:h-16 w-10 h-10 rounded-full"
               />
             </div>
           </HoverCardTrigger>
@@ -278,11 +278,11 @@ function skills() {
       >
         <HoverCard>
           <HoverCardTrigger>
-          <div onMouseEnter={BtnClick} onMouseLeave={textLeave} className="flex justify-center items-center w-20 h-20 rounded-full bg-gray-200">
+            <div onMouseEnter={BtnClick} onMouseLeave={textLeave} className="flex justify-center items-center md:w-20 md:h-20 w-14 h-14 rounded-full bg-gray-200">
               <img
                 src="/images/skill/mysql.png"
                 alt=""
-                className="w-16 h-16 rounded-full"
+                className="md:w-16 md:h-16 w-10 h-10 rounded-full"
               />
             </div>
           </HoverCardTrigger>
@@ -294,8 +294,8 @@ function skills() {
 
         <HoverCard>
           <HoverCardTrigger>
-            <div onMouseEnter={BtnClick} onMouseLeave={textLeave} className="flex justify-center items-center w-20 h-20 rounded-full bg-gray-200">
-              <img src="/images/skill/mongodb.png" alt="" className="w-12 h-12" />
+            <div onMouseEnter={BtnClick} onMouseLeave={textLeave} className="flex justify-center items-center md:w-20 md:h-20 w-14 h-14        rounded-full bg-gray-200">
+              <img src="/images/skill/mongodb.png" alt="" className="md:w-16 md:h-16 w-10 h-10" />
             </div>
           </HoverCardTrigger>
           <HoverCardContent>

@@ -14,9 +14,9 @@ export default function page() {
   }
 
   return (
-    <div className='w-screen px-36 mt-8'>
-      <span onMouseEnter={textEnter} onMouseLeave={textLeave} className='text-lg'>Welcome to my <strong>creative space!</strong></span>
-      <div className='flex flex-col gap-4 text-lg mt-4'>
+    <div className='w-screen lg:px-36 px-4 lg:mt-6 md:mt-10 md:px-16 mt-20 pb-8 lg:pb-0'>
+      <span onMouseEnter={textEnter} onMouseLeave={textLeave} className='md:text-lg text-sm'>Welcome to my <strong>creative space!</strong></span>
+      <div className='flex flex-col md:gap-4 gap-2 md:text-lg lg:text-xl text-sm mt-4'>
         <p onMouseEnter={textEnter} onMouseLeave={textLeave}> Hey <strong>Rahul,</strong> this side</p>
       <p onMouseEnter={textEnter} onMouseLeave={textLeave}>
         I am a MERN Stack Developer with over 1 years of hands-on experience in full-stack web development. Specializing in React, Node.js, and MongoDB, I focus on building scalable, high-performance, and user-centric web applications. My passion lies in crafting innovative solutions that address real-world challenges through clean, efficient code.

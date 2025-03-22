@@ -73,10 +73,10 @@ function projects() {
 
 
   return (
-    <div className="grid grid-cols-3 gap-4 px-20 mb-4 mt-10">
+    <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 lg:gap-4 md:gap-6 lg:px-20 md:px-10 px-4 gap-y-4 mb-4 md:mt-10 mt-20">
       {projects &&
         projects.map((pro, index) => (
-          <HoverCard className='rounded-xl w-64'>
+          <HoverCard className='rounded-xl md:w-64 w-48'>
             <HoverCardTrigger>
               <Card key={index} className="hover:-translate-y-2 transition-all duration-200">
                 <div className="w-full">
@@ -84,11 +84,11 @@ function projects() {
                 </div>
                 <CardHeader>
                   <div className="flex justify-between">
-                    <CardTitle onMouseEnter={textEnter} onMouseLeave={textLeave} className="text-2xl font-bold tracking-wider">
+                    <CardTitle onMouseEnter={textEnter} onMouseLeave={textLeave} className="md:text-2xl text-xl font-bold tracking-wider">
                       {pro.Title}
                     </CardTitle>
                     <Link onMouseEnter={BtnClick} onMouseLeave={textLeave} href={pro.link}>
-                      <Github size={40} />
+                      <Github className="md:size-8 size-6" />
                     </Link>
                   </div>
 
@@ -102,7 +102,7 @@ function projects() {
                     href={pro.link}
                     onMouseEnter={BtnClick}
                     onMouseLeave={textLeave}
-                    className="w-full gap-2 text-blue-600 flex justify-end "
+                    className="w-full text-blue-600 flex justify-end "
                   >
                     Learn More
                     <MoveRight />

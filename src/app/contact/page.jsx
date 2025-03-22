@@ -46,9 +46,9 @@ function contact() {
   }
 
   return (
-    <div className="w-full px-36 mt-10">
-      <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-6 w-1/2">
-        <div className="flex gap-4 w-full">
+    <div className="w-full lg:px-36 md:px-10 px-4 md:mt-10 mt-20 pb-8">
+      <form onSubmit={handleSubmit(onSubmit)} className="flex flex-wrap md:flex-nowrap flex-col md:gap-6 gap-4 lg:w-1/2 md:w-4/6">
+        <div className="flex flex-wrap md:flex-nowrap gap-4 w-full">
           <input
             onMouseEnter={BtnClick}
             onMouseLeave={textLeave}
@@ -57,14 +57,14 @@ function contact() {
             {...register("name", { required: true })}
             className="w-full outline-none px-3 py-2 border border-gray-400 rounded-md hover:border-green-800 hover:border-2 transition-all duration-200"
           />
-          <div>
+          <div className="w-full">
           <input
             onMouseEnter={BtnClick}
             onMouseLeave={textLeave}
             type="text"
             placeholder="Phone no."
             {...register("phone", { required: true, pattern: { value: /^\d{10}$/, message: "Invalid phone number" } })}
-            className="outline-none px-3 py-2 border border-gray-400 rounded-md hover:border-green-800 hover:border-2 transition-all duration-200"
+            className="w-full outline-none px-3 py-2 border border-gray-400 rounded-md hover:border-green-800 hover:border-2 transition-all duration-200"
           />
           {errors.phone && <p className="text-red-500 text-sm">{errors.phone.message}</p>}
           </div>
@@ -97,7 +97,7 @@ function contact() {
             onMouseEnter={BtnClick}
             onMouseLeave={textLeave}
             type="submit"
-            className="border-2 cursor-none border-green-800 rounded-full py-1.5 justify-center text-green-800 flex gap-2 w-3/12 font-semibold hover:gap-4 hover:bg-green-800 hover:text-white transition-all duration-200 "
+            className="border-2 cursor-none border-green-800 rounded-full md:py-1.5 px-4 md:p-0 justify-center text-green-800 flex gap-2 md:w-3/12 font-semibold hover:gap-4 hover:bg-green-800 hover:text-white transition-all duration-200 "
           >
             Submit
             <SendHorizontal />

@@ -70,55 +70,55 @@ function Nav() {
 
   return (
     <div className="min-w-screen h-80">
-      <div className="w-full flex gap-20 px-36 pt-10">
+      <div className="w-full md:flex md:gap-20 lg:px-44 md:px-10 px-4 md:pt-10 pt-5">
         {/* Profile Picture */}
-        <div>
+        <div className="">
           <div onMouseEnter={ImgHover}
-              onMouseLeave={textLeave} className="w-44 h-44 rounded-full border-2 border-black flex justify-center items-center">
+              onMouseLeave={textLeave} className="md:w-44 md:h-44 w-36 h-36 rounded-full border-2 border-black flex justify-center items-center">
             <img
               
               src="/images/pfp.jpg"
               alt="Rahul Singh"
-              className="w-40 h-40 rounded-full object-fill hover:scale-105 cursor-none"
+              className="md:w-40 md:h-40 w-32 h-32 rounded-full object-fill hover:scale-105 cursor-none"
             />
           </div>
         </div>
         {/* Bio */}
-        <div className="w-4/5 py-8 flex flex-col gap-3">
-          <h1 onMouseEnter={textEnter} onMouseLeave={textLeave} className="text-4xl font-bold tracking-wider">
+        <div className="w-full md:py-8 py-4 flex flex-col gap-3 md:border-b-0 border-b-2 border-gray-200">
+          <h1 onMouseEnter={textEnter} onMouseLeave={textLeave} className="md:text-4xl lg:text-5xl text-2xl font-bold md:tracking-wider">
             Rahul Singh Chouhan
           </h1>
-          <p onMouseEnter={textEnter} onMouseLeave={textLeave} className="text-gray-400 text-lg">MERN Stack Developer | Full-Stack Web Development | React | Node.js | MongoDB</p>
-          <div className="w-full flex justify-between mt-6">
+          <p onMouseEnter={textEnter} onMouseLeave={textLeave} className="text-gray-400 md:text-lg lg:text-xl">MERN Stack Developer | Full-Stack Web Development | React | Node.js | MongoDB</p>
+          <div className="w-full flex justify-between md:mt-6">
             {/* Social Media Links */}
             <div className="flex gap-3">
-              <div onMouseEnter={BtnClick} onMouseLeave={textLeave} className="w-10 h-10 flex justify-center items-center rounded-full border-2 hover:bg-green-800 hover:text-white transition-all duration-200">
+              <div onMouseEnter={BtnClick} onMouseLeave={textLeave} className="sm:w-10 sm:h-10 w-8 h-8 flex justify-center items-center rounded-full border-2 hover:bg-green-800 hover:text-white transition-all duration-200">
                 <Link href="https://www.linkedin.com/in/rahul-singh-chouhan-381b252a9/">
-                  <Linkedin className="text-gray-500 hover:text-white" />
+                  <Linkedin className="text-gray-500 hover:text-white w-5" />
                 </Link>
               </div>
 
-              <div onMouseEnter={BtnClick} onMouseLeave={textLeave} className="w-10 h-10 flex justify-center items-center rounded-full border-2 hover:bg-green-800 hover:text-white transition-all duration-200">
+              <div onMouseEnter={BtnClick} onMouseLeave={textLeave} className="sm:w-10 sm:h-10 w-8 h-8 flex justify-center items-center rounded-full border-2 hover:bg-green-800 hover:text-white transition-all duration-200">
                 <Link href="https://github.com/RahulSingh044">
-                  <Github className="text-gray-500 hover:text-white" />
+                  <Github className="text-gray-500 hover:text-white w-5" />
                 </Link>
               </div>
 
-              <div onMouseEnter={BtnClick} onMouseLeave={textLeave} className="w-10 h-10 flex justify-center items-center rounded-full border-2 hover:bg-green-800 hover:text-white transition-all duration-300">
-                <Instagram className="text-gray-500 hover:text-white" />
+              <div onMouseEnter={BtnClick} onMouseLeave={textLeave} className="sm:w-10 sm:h-10 w-8 h-8 flex justify-center items-center rounded-full border-2 hover:bg-green-800 hover:text-white transition-all duration-300">
+                <Instagram className="text-gray-500 hover:text-white w-5" />
               </div>
             </div>
 
             {isVisible.testimonials ? (
               /* Add testimonials */
-              <Dialog className="w-80">
-                <DialogTrigger onMouseEnter={BtnClick} onMouseLeave={textLeave} className="w-48 h-8 cursor-none border border-green-800 rounded-full flex justify-center items-center text-sm tracking-wider px-4 gap-2 text-green-800 hover:bg-green-800 hover:text-white transition-all duration-300">
+              <Dialog className="md:w-48 md:h-8 w-40 h-8">
+                <DialogTrigger onMouseEnter={BtnClick} onMouseLeave={textLeave} className="md:w-48 md:h-8 cursor-none border border-green-800 rounded-full flex justify-center items-center md:text-sm text-xs md:tracking-wider md:px-4 px-2 gap-2 text-green-800 hover:bg-green-800 hover:text-white transition-all duration-300">
                   Add Testimonials
                   <Plus width="14" />
                 </DialogTrigger>
                 <DialogContent>
                   <DialogHeader >
-                    <DialogTitle className="font-mono text-2xl">Add your <span className="text-green-800">Testimonials</span></DialogTitle>
+                    <DialogTitle className="font-mono md:text-2xl text-sm">Add your <span className="text-green-800">Testimonials</span></DialogTitle>
                   </DialogHeader>
                   <TestimonialForm />
                 </DialogContent>
@@ -126,7 +126,7 @@ function Nav() {
             ) : (
               /* Message Box */
               <Link href="/contact">
-                <div onMouseEnter={BtnClick} onMouseLeave={textLeave} className="w-40 h-8 border border-green-800 rounded-full flex justify-center items-center text-sm tracking-wider px-4 gap-2 text-green-800 hover:bg-green-800 hover:text-white transition-all duration-300">
+                <div onMouseEnter={BtnClick} onMouseLeave={textLeave} className="md:w-40 md:h-8 border border-green-800 rounded-full flex justify-center items-center md:text-sm md:tracking-wider md:px-4 text-xs px-2 gap-2 text-green-800 hover:bg-green-800 hover:text-white transition-all duration-300">
                   Message me
                   <SquareArrowOutUpRight width="14" />
                 </div>
@@ -137,9 +137,9 @@ function Nav() {
       </div>
 
       {/* Navbar Items */}
-      <div className="w-full px-36">
+      <div className="w-full lg:w-4/5 px-4 md:px-14 lg:px-40 mt-2 md:mt-0">
         <nav>
-          <ul className="flex items-center gap-10 text-xl font-semibold space-x-10 tracking-wider text-gray-400">
+          <ul className="flex md:text-xl text-sm justify-between font-semibold md:space-x-10 md:tracking-wider text-gray-400">
             <Link
               onClick={() => {
                 toggleVisibility("about");
