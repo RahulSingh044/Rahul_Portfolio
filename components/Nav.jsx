@@ -8,6 +8,8 @@ import Link from "next/link";
 import TestimonialForm from "./TestimonialForm";
 import { useDispatch } from "react-redux";
 import { setCursorVariants } from "../src/store/cursorSlice";
+import { FileDown } from "lucide-react";
+import { FileUser } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -28,6 +30,7 @@ function Nav() {
     contact: false,
   });
 
+  
   const toggleVisibility = (section) => {
     setIsVisible((prevState) => {
       // Make a copy of the previous state
@@ -91,22 +94,29 @@ function Nav() {
           <p onMouseEnter={textEnter} onMouseLeave={textLeave} className="text-gray-400 md:text-lg lg:text-xl">MERN Stack Developer | Full-Stack Web Development | React | Node.js | MongoDB</p>
           <div className="w-full flex justify-between md:mt-6">
             {/* Social Media Links */}
-            <div className="flex gap-3">
-              <div onMouseEnter={BtnClick} onMouseLeave={textLeave} className="sm:w-10 sm:h-10 w-8 h-8 flex justify-center items-center rounded-full border-2 hover:bg-green-800 hover:text-white transition-all duration-200">
+            <div className="flex gap-3 items-center">
+              <div onMouseEnter={BtnClick} onMouseLeave={textLeave} className="md:w-10 md:h-10 w-8 h-8 flex justify-center items-center rounded-full border-2 hover:bg-green-800 hover:text-white transition-all duration-200">
                 <Link href="https://www.linkedin.com/in/rahul-singh-chouhan-381b252a9/">
                   <Linkedin className="text-gray-500 hover:text-white w-5" />
                 </Link>
               </div>
 
-              <div onMouseEnter={BtnClick} onMouseLeave={textLeave} className="sm:w-10 sm:h-10 w-8 h-8 flex justify-center items-center rounded-full border-2 hover:bg-green-800 hover:text-white transition-all duration-200">
+              <div onMouseEnter={BtnClick} onMouseLeave={textLeave} className="md:w-10 md:h-10 w-8 h-8 flex justify-center items-center rounded-full border-2 hover:bg-green-800 hover:text-white transition-all duration-200">
                 <Link href="https://github.com/RahulSingh044">
                   <Github className="text-gray-500 hover:text-white w-5" />
                 </Link>
               </div>
 
-              <div onMouseEnter={BtnClick} onMouseLeave={textLeave} className="sm:w-10 sm:h-10 w-8 h-8 flex justify-center items-center rounded-full border-2 hover:bg-green-800 hover:text-white transition-all duration-300">
+              <div onMouseEnter={BtnClick} onMouseLeave={textLeave} className="md:w-10 md:h-10 w-8 h-8 flex justify-center items-center rounded-full border-2 hover:bg-green-800 hover:text-white transition-all duration-300">
                 <Instagram className="text-gray-500 hover:text-white w-5" />
               </div>
+              
+              <Link href="/RESUMERahul.pdf" target="_blank" download>
+                <button onClick={()=> window.open("https://drive.google.com/file/d/1NhTM9gfZLqCtOfWnsV8bi_Kl79DUgzF9/view")} onMouseEnter={BtnClick} onMouseLeave={textLeave} className="md:w-10 md:h-10 w-8 h-8 flex justify-center items-center rounded-full border-2 hover:bg-green-800 hover:text-white transition-all duration-300 md:hover:after:content-['Resume'] md:hover:w-28">
+                  <FileUser className="text-gray-500 hover:text-white w-5" />
+                </button>
+              </Link>
+
             </div>
 
             {isVisible.testimonials ? (
