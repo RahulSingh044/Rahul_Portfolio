@@ -47,7 +47,7 @@ function TestimonialForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col md:gap-5 gap-3">
+    <form onSubmit={handleSubmit(onSubmit)} className="w-full mx-auto overflow-hidden flex flex-col md:gap-5 gap-3">
       <input
         className="border px-3 py-2 rounded-lg bg-gray-300"
         type="text"

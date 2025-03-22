@@ -111,7 +111,7 @@ function Nav() {
 
             {isVisible.testimonials ? (
               /* Add testimonials */
-              <Dialog className="md:w-48 md:h-8 w-40 h-8">
+              <Dialog className="">
                 <DialogTrigger onMouseEnter={BtnClick} onMouseLeave={textLeave} className="md:w-48 md:h-8 cursor-none border border-green-800 rounded-full flex justify-center items-center md:text-sm text-xs md:tracking-wider md:px-4 px-2 gap-2 text-green-800 hover:bg-green-800 hover:text-white transition-all duration-300">
                   Add Testimonials
                   <Plus width="14" />

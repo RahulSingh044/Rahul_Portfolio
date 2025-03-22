@@ -41,7 +41,7 @@ export default function page() {
   }
 
   if (testimonial <= 0) {
-    return <div onMouseEnter={textEnter} onMouseLeave={textLeave} className="text-center text-2xl">No Testimonials yet</div>
+    return <div onMouseEnter={textEnter} onMouseLeave={textLeave} className="text-center text-2xl mt-20 md:mt-10 lg:mt-0">No Testimonials yet</div>
   }
 
   return (
